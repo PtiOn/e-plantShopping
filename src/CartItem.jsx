@@ -9,10 +9,15 @@ const CartItem = ({ onContinueShopping }) => {
 
   // Calculate total amount for all products in the cart
   const calculateTotalAmount = () => {
-    totalAmount = 0;
+    let totalAmount = 0;
+    console.log("Coucou toi")
     cart.forEach((item) => {
-        totalAmount += (item.quantity * item.cost)
+        totalAmount += (item.quantity * parseFloat(item.cost.replace('$', '')))
+        console.log("Coucou toi " && item.quantity)
+        console.log("Coucou toi " && item.cost)
+        console.log("Coucou toi " && item.quantity * parseFloat(item.cost.replace('$', '')))
     })
+    return totalAmount
   };
 
     const handleCheckoutShopping = (e) => {
@@ -40,7 +45,11 @@ const CartItem = ({ onContinueShopping }) => {
 
   // Calculate total cost based on quantity for an item
   const calculateTotalCost = (item) => {
-    item.quantity*item.cost;
+    return item.quantity*parseFloat(item.cost.replace('$', ''));
+  };
+  
+  const handleContinueShopping = (e) => {
+    setShowCart=(false); 
   };
 
   return (
