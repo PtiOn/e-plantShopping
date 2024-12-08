@@ -226,7 +226,6 @@ function ProductList() {
     justifyContent: 'space-between',
     alignIems: 'center',
     fontSize: '20px',
-    position:"fixed",
    }
    const styleObjUl={
     display: 'flex',
